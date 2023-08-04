@@ -30,4 +30,15 @@
 ![마이페이지](https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/8640f95b-ab07-424c-8993-3d74b4857060)
 
 메인페이지 작동영상
+https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/a949dbe1-fafc-4473-a43f-a09106324d7a
+
+관리자 로그인
+
+![관리자로그인](https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/a7e4f4d6-99b7-4021-bd88-cca7520d2020)
+
+관리자 상품,주문관리
+
+
+https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/258a6dc8-4898-4dfc-9e82-5a4dff0cea29
+
 
