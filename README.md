@@ -2,7 +2,7 @@
 데이터 영상정리<br><br>
 ## 전체
 http://naver.me/56agKRMg
-
+## 프로젝트 실행
  header 구성
  
  [header 구성.webm]([https://user-images.githubusercontent.com/120000929/233591007-4428cc1a-af9d-4898-af08-c561ff4a7e8e.webm](http://naver.me/FNGjsobz)
