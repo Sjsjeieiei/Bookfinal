@@ -20,13 +20,13 @@ http://naver.me/56agKRMg
  [메인페이지 구성.webm](http://naver.me/5SyR05uC)
  <br><br>상세페이지
  
-[상세페이지 구성.webm](http://naver.me/FcuZWyZP)
+[상세페이지 구성.webm]([http://naver.me/FcuZWyZP](http://naver.me/F7ypPI69)
 
 <br><br>주문하기와 주문취소
 
-[주문하기와 주문취소.webm]
+[주문하기와 주문완료.webm]
 주문하기:(http://naver.me/xjJuyGHx)
-주문취소:(http://naver.me/FwS4mOuS))
+주문완료:(http://naver.me/FwS4mOuS))
 
 <br><br>장바구니
 
