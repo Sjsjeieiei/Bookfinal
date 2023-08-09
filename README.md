@@ -1,13 +1,10 @@
 # Bookshop
 영상정리.<br><br>
 
-기획 excel<br>
-https://docs.google.com/spreadsheets/d/1ZLznMpMZuEis_r3u2yxiqg-ICeju9GGz/edit?usp=sharing&ouid=114041644283327531753&rtpof=true&sd=true
+전체영상 <br>
+http://naver.me/56agKRMg
 <br><br>
-기획 ppt<br>
-https://docs.google.com/presentation/d/1yiiM3Q4y2zNTBUay7PueBAnusQxZLAwp/edit?usp=sharing&ouid=114041644283327531753&rtpof=true&sd=true
- <br><br><br>
- 
+
  header 구성
  
  [header 구성.webm](https://user-images.githubusercontent.com/120000929/233591007-4428cc1a-af9d-4898-af08-c561ff4a7e8e.webm)
