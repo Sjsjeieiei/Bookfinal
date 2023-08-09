@@ -38,7 +38,7 @@ http://naver.me/56agKRMg
 
 <br><br>관리자 - 상품 회원,상품,주문 관리
 
-[관리자 - 상품관리.webm]([[http://naver.me/FvF3I3r2](http://naver.me/GxNIvRtD)http://naver.me/GxNIvRtD](http://naver.me/GxNIvRtD)http://naver.me/GxNIvRtD)
+[관리자 페이지](http://naver.me/GxNIvRtD)
 
 
 
