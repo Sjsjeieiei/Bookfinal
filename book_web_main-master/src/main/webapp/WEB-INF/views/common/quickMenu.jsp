@@ -8,12 +8,12 @@
   .quickMenu {
     position: fixed;
     top: 60px; /* 조정 가능한 값 */
-    right: 300px; /* 조정 가능한 값 */
-    width: 130px;
+    right: 100px; /* 조정 가능한 값 */
+    width: 100px;
     transition: transform 0.3s;
   }
 </style>
-<script>
+<!-- <script>
 	var array_index=0;
 	var SERVER_URL="${contextPath}/thumbnails.do";
 	var previousScroll = 0; // 이전 스크롤 위치
@@ -46,9 +46,9 @@
 	img_sticky.src=SERVER_URL+"?goods_id="+goods_id+"&fileName="+fileName;
 	cur_goods_num.innerHTML=array_index+1;
 }
-</script>
+</script> -->
 
-<script>
+<!-- <script>
 	$(document).ready(function() {
 		var limitY = 700; // 일정 스크롤 위치 값 (조정 가능)
 
@@ -63,7 +63,7 @@
 			}
 		});
 	});
-</script>
+</script> -->
 
 <div
 	class="d-flex flex-column quickMenu"

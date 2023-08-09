@@ -17,14 +17,14 @@ public class GoodsDAOImpl  implements GoodsDAO{
 	private SqlSession sqlSession;
 
 	
-	//¸ŞÀÎÆäÀÌÁö - ÁöÁ¤ statusº°
+	//ìƒí’ˆ ë¦¬ìŠ¤íŠ¸ ê°€ì ¸ì˜´
 	@Override
 	public List<GoodsVO> selectGoodsList(String goodsStatus ) throws DataAccessException {
 		List<GoodsVO> goodsList=(ArrayList)sqlSession.selectList("mapper.goods.selectGoodsList",goodsStatus);
 		return goodsList;	
 	}
 
-	//¸ŞÀÎÆäÀÌÁö - ¸Ş´ºº°
+	//ë©”ë‰´ ë¦¬ìŠ¤íŠ¸
 	@Override
 	public List<GoodsVO> selectMenusList(String goodsSort) throws DataAccessException {
 		List<GoodsVO> goodsList=(ArrayList)sqlSession.selectList("mapper.goods.selectMenusList",goodsSort);
@@ -32,35 +32,35 @@ public class GoodsDAOImpl  implements GoodsDAO{
 	}
 
 	
-	//header Ä«Å×°í¸®º°
+	//header ì¹´í…Œê³ ë¦¬
 	@Override
 	public List<GoodsVO> selectGoodsByMenuGoods(String menuGoods) throws DataAccessException {
 		ArrayList goodsList=(ArrayList)sqlSession.selectList("mapper.goods.selectGoodsByMenuGoods",menuGoods);
 		 return goodsList;
 	}
 	
-	//ÃßÃµÅ°¿öµå
+	//í‚¤ì›Œë“œ ê²€ìƒ‰
 	@Override
 	public List<String> selectKeywordSearch(String keyword) throws DataAccessException {
 	   List<String> list=(ArrayList)sqlSession.selectList("mapper.goods.selectKeywordSearch",keyword);
 	   return list;
 	}
 	
-	//°Ë»ö
+	// ìƒí’ˆ ê²€ìƒ‰
 	@Override
 	public ArrayList selectGoodsBySearchWord(String searchWord) throws DataAccessException{
 		ArrayList list=(ArrayList)sqlSession.selectList("mapper.goods.selectGoodsBySearchWord",searchWord);
 		 return list;
 	}
 	
-	//»óÇ°»ó¼¼ - »óÇ°»ó¼¼Á¤º¸ ÃßÃâ
+	// ìƒí’ˆ ìƒì„¸ ì •ë³´
 	@Override
 	public GoodsVO selectGoodsDetail(String goods_id) throws DataAccessException{
 		GoodsVO goodsVO=(GoodsVO)sqlSession.selectOne("mapper.goods.selectGoodsDetail",goods_id);
 		return goodsVO;
 	}
 	
-	//»óÇ°»ó¼¼ - »ó¼¼ÀÌ¹ÌÁö ÃßÃâ
+	//ìƒì„¸ ì´ë¯¸ì§€
 	@Override
 	public List<ImageFileVO> selectGoodsDetailImage(String goods_id) throws DataAccessException{
 		List<ImageFileVO> imageList=(ArrayList)sqlSession.selectList("mapper.goods.selectGoodsDetailImage",goods_id);

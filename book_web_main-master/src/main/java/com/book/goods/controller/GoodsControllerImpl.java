@@ -27,7 +27,7 @@ public class GoodsControllerImpl extends BaseController   implements GoodsContro
 	@Autowired
 	private GoodsService goodsService;
 	
-	//����Ʈ������
+// 상품 메뉴
 	@Override
 	@RequestMapping(value="menuGoods.do" ,method = RequestMethod.GET)
 	public ModelAndView menuGoods(String menuGoods, HttpServletRequest request, HttpServletResponse response)
@@ -35,34 +35,34 @@ public class GoodsControllerImpl extends BaseController   implements GoodsContro
 		String viewName=(String)request.getAttribute("viewName");
 		List<GoodsVO> goodsList=goodsService.menuGoods(menuGoods);
 		ModelAndView mav = new ModelAndView(viewName);
-		//������ �����Ϳ� ī�װ����� �����Ͽ� return.
+		//goodsList 추가
+		//menuGoods 추가
 		mav.addObject("goodsList", goodsList);
 		mav.addObject("menuGoods", menuGoods);
 		return mav;
 	}
 	
 
-	//��õŰ����
+	//키워드 선택.
 	@RequestMapping(value="/keywordSearch.do",method = RequestMethod.GET,produces = "application/text; charset=utf8")
-	public @ResponseBody String  keywordSearch(@RequestParam("keyword") String keyword,
+	public @ResponseBody String  keywordSearch(@RequestParam("keyword") String keyword,  // 리퀘스트 keyword 받아옴.
 			                                  HttpServletRequest request, HttpServletResponse response) throws Exception{
 		response.setContentType("text/html;charset=utf-8");
 		response.setCharacterEncoding("utf-8");
 		
-		//keyword�� null�ΰ��� �ƹ��͵� return�����ʴ´�.
+		//keywordr가 null 이거나 공백일떄 null 을 반환한다.
 		if(keyword == null || keyword.equals(""))
 		   return null ;
 	
-		//��ҹ��ڸ� ���������ʰ� �˻��ϵ��� �Ѵ�.
+		//대문자로 변환
 		keyword = keyword.toUpperCase();
 	    List<String> keywordList =goodsService.keywordSearch(keyword);
-	    
-	    //����� ����
-		JSONObject jsonObject = new JSONObject();
-		jsonObject.put("keyword", keywordList);
+	    //문자열 리스트 keywordList 로 키워드 선택
+		JSONObject jsonObject = new JSONObject(); //json객체 생성하고
+		jsonObject.put("keyword", keywordList); //key :keyword value:keywordList 로 내보낸다.
 	    String jsonInfo = jsonObject.toString();
 	    
-	    //��ȯ�� string jsonObject, jsonInfo ����
+	    //return jsonInfo 
 	    return jsonInfo ;
 	}
 	
@@ -79,7 +79,7 @@ public class GoodsControllerImpl extends BaseController   implements GoodsContro
 	}
 	
 	
-	//��ǰ��
+	//상품 상세
 	@RequestMapping(value="/goodsDetail.do" ,method = RequestMethod.GET)
 	public ModelAndView goodsDetail(@RequestParam("goods_id") String goods_id,
 			                       HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -87,64 +87,68 @@ public class GoodsControllerImpl extends BaseController   implements GoodsContro
 		ModelAndView mav = new ModelAndView(viewName);
 		HttpSession session=request.getSession();
 		
-		//goods_id���� �´� ������ ������ goodsMap �Ҵ�
+		//상품 goodsDetail 메소드를 호출하여 goods id를 토대로 상품정보를 goodsMap에 저장합니다.
 		Map goodsMap=goodsService.goodsDetail(goods_id);
 		mav.addObject("goodsMap", goodsMap);
 		
-		//goodsMap�� goodsVO ��ü�� ����
+		
+		//goodsvo라고 저장된 객채를 가지고옴.
+		
 		GoodsVO goodsVO=(GoodsVO)goodsMap.get("goodsVO");
 		
-		//���޴��� �湮�� �ش� ��ǰ������ �߰�
+		//빠른 주문 리스트에 추가합니다.
 		addGoodsInQuick(goods_id,goodsVO,session);
 		
-		//�� + ��ǰ�� ���� ����
 		return mav;
 	}
 	
 	
 	
-	//���޴�
+// 빠른구매
 	private void addGoodsInQuick(String goods_id,GoodsVO goodsVO,HttpSession session){
-		//�ߺ�üũ�� ���� ���� �ʱ�ȭ
+		// 중복 여부검사 
 		boolean already_existed=false;
 		
-		//���� ���޴� ����Ʈ quickGoodsList �Ҵ�
+		   // 빠른 상품 리스트 quickGoodsList를 가져옵니다.
 		List<GoodsVO> quickGoodsList;
 		quickGoodsList=(ArrayList<GoodsVO>)session.getAttribute("quickGoodsList");
 		
-		//���޴��� ����Ʈ�� ������
+		//이미 존재할경우 
 		if(quickGoodsList!=null){
 			
-			//���޴� ����Ʈ���� 3���� ����Ʈ�� ǥ���Ұ���.
+			//빠른 상품이 3이상으로 존재한다면
 			if(quickGoodsList.size() < 3){
 				for(int i=0; i<quickGoodsList.size();i++){
 					String _goodsBean=String.valueOf(quickGoodsList.get(i).getGoods_id());
-					//��ǰid, goods_id�� �����ϴٸ� already_existed=true, �ڵ�����.
+					   // quickGoodsList에서 i번째 상품의 goods_id를 문자열로 변환하여 _goodsBean 변수에 저장합니다.
+					
+					
+					// goods_id 와 _goodsBean 과 같으면 이미 있다는 뜻이므로 already_existed=true; 반복문을 탈출한다.
 					if(goods_id.equals(_goodsBean)){
 						already_existed=true;
 						break;
 					}
 				}
-				//already_existed�� false, �ߺ������ʴ� ���ο� ��ǰ�� ��� add
+				  // already_existed가 false인 경우, 중복이 아닌 상품을 빠른 상품 리스트에 추가합니다.
 				if(already_existed==false){
 					quickGoodsList.add(goodsVO);
 				}
 
-			//���޴� ����Ʈ�� 3���� �Ѿ�� �ɰ��
+			//3개 이상인경우
 			}else {
-				//ù���� ��ǰ�� ���ְ� ���ο� ��ǰ�� �߰�.
+				//첫 번쨰 상품 제거
 				quickGoodsList.remove(0);
 				quickGoodsList.add(goodsVO);
 			}
 		
 		
-		//���޴��� ����Ʈ�� ���� ��� �� ArrayList���� �� �߰� add
+		//빠른 상품 리스트가 존재하지 않는경우  새로운 ArrayList를 생성한다.
 		}else{
 			quickGoodsList =new ArrayList<GoodsVO>();
 			quickGoodsList.add(goodsVO);
 		}
 		
-		//�� �۾��� �Ϸ� �� �� ���ǿ� ����.
+		//빠른 상품 리스트와 리스트 크기를 세션에 적용합니다.
 		session.setAttribute("quickGoodsList",quickGoodsList);
 		session.setAttribute("quickGoodsListNum", quickGoodsList.size());
 	}

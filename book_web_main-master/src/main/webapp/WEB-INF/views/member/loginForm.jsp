@@ -24,80 +24,7 @@
 
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-<style>
-.form-signin {
-	max-width: 330px;
-	padding: 15px;
-}
 
-.form-signin .form-floating:focus-within {
-	z-index: 2;
-}
-
-.form-signin input[type="email"] {
-	margin-bottom: -1px;
-	border-bottom-right-radius: 0;
-	border-bottom-left-radius: 0;
-}
-
-.form-signin input[type="password"] {
-	margin-bottom: 10px;
-	border-top-left-radius: 0;
-	border-top-right-radius: 0;
-}
-
-.bd-placeholder-img {
-	font-size: 1.125rem;
-	text-anchor: middle;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	user-select: none;
-}
-
-@media ( min-width : 768px) {
-	.bd-placeholder-img-lg {
-		font-size: 3.5rem;
-	}
-}
-
-.b-example-divider {
-	height: 3rem;
-	background-color: rgba(0, 0, 0, .1);
-	border: solid rgba(0, 0, 0, .15);
-	border-width: 1px 0;
-	box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em
-		rgba(0, 0, 0, .15);
-}
-
-.b-example-vr {
-	flex-shrink: 0;
-	width: 1.5rem;
-	height: 100vh;
-}
-
-.bi {
-	vertical-align: -.125em;
-	fill: currentColor;
-}
-
-.nav-scroller {
-	position: relative;
-	z-index: 2;
-	height: 2.75rem;
-	overflow-y: hidden;
-}
-
-.nav-scroller .nav {
-	display: flex;
-	flex-wrap: nowrap;
-	padding-bottom: 1rem;
-	margin-top: -1px;
-	overflow-x: auto;
-	text-align: center;
-	white-space: nowrap;
-	-webkit-overflow-scrolling: touch;
-}
-</style>
 
 
 
@@ -135,52 +62,39 @@
 </head>
 <body class="text-center">
 
-	<main class="form-signin w-100 m-auto">
-		<form name="member_id" method="post" id="memberForm"
-			action="${contextPath}/member/login.do" method="post">
-			<img class="mb-4" src="${contextPath}/resources/img/Main.jpg" alt=""
-				width="72" height="57">
-			<h1 class="h3 mb-3 fw-normal">로그인페이지</h1>
+	
+    <main class="form-signin w-300 m-auto" style="max-width: 300px;">
+        <form name="member_id" method="post" id="memberForm" action="${contextPath}/member/login.do" method="post">
+            <img class="mb-4" src="${contextPath}/resources/img/book1.png" alt="" width="72" height="57">
+            <h1 class="h3 mb-3 fw-normal">로그인페이지</h1>
 
-			<div class="form-floating">
-				<input type="text" name="member_id" class="form-control"
-					id="floatingInput" placeholder="아이디"> <label
-					for="floatingInput">아이디</label>
-			</div>
+            <div class="form-floating mb-3">
+                <input type="text" name="member_id" class="form-control" id="floatingInput" placeholder="아이디">
+                <label for="floatingInput">아이디</label>
+            </div>
 
-			<div class="mb-3"></div>
+            <div class="form-floating mb-3">
+                <input type="password" name="member_pw" class="form-control" id="floatingPassword" placeholder="비밀번호">
+                <label for="floatingPassword">비밀번호</label>
+            </div>
 
-			<div class="form-floating">
-				<input type="password" name="member_pw" class="form-control"
-					id="floatingPassword" placeholder="비밀번호"> <label
-					for="floatingPassword">비밀번호</label>
-			</div>
+            <div class="allRequiredInputCheck invalid-feedback text-start fs-07 mb-3 d-none">
+                모든 정보를 입력해주세요.
+            </div>
 
-			<div
-				class="allRequiredInputCheck invalid-feedback text-start fs-07 mb-3 d-none">
-				모든 정보를 입력해주세요.</div>
+            <div class="d-flex justify-content-between">
+                <button type="submit" name="loginButton" class="btn btn-main rounded-0 w-100 d-block fw-bold p-2 lh-lg mb-3">로그인</button>
+            </div>
 
-			<div class="d-flex justify-content-between">
-				<!-- 			<button class="w-100 btn btn-lg btn-primary" type="button" onclick="login()">로그인</button> -->
-				<button type="submit" name="loginButton"
-					class="w-100 btn btn-lg btn-primary" type="button">로그인</button>
-			</div>
+            <div class="mb-3"></div>
 
-			<div class="mb-3"></div>
-
-			<div class="d-flex justify-content-between">
-				<button class="w-50 btn btn-lg btn-primary" type="reset">다시입력</button>
-				<button class="w-50 btn btn-lg btn-primary">
-					<a style="color: white; text-decoration: none;"
-						href="${contextPath}/member/memberForm.do">회원가입</a>
-				</button>
-<%-- 	<button class="w-50 btn btn-lg btn-primary">
-					<a style="color: white; text-decoration: none;"
-						href="${contextPath}/member/naverlogin.do">네이버로그인</a>
-				</button> --%>
-
-			</div>
-		</form>
-	</main>
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-main rounded-0 w-100 d-block fw-bold p-2 lh-lg mb-3" type="reset">다시입력</button>
+                <button class="btn btn-main rounded-0 w-100 d-block fw-bold p-2 lh-lg mb-3">
+                    <a style="color: white; text-decoration: none;" href="${contextPath}/member/memberForm.do">회원가입</a>
+                </button>
+            </div>
+        </form>
+    </main>
 </body>
 </html>

@@ -44,7 +44,7 @@
 		<result property="hp1" column="hp1" />
 		<result property="zipcode" column="zipcode" />
 		<result property="subAddress" column="subAddress" />
-		<result property="sopang_money" column="sopang_money" />
+		<result property="bookshop_money" column="bookshop_money" />
 		<result property="joinDate" column="joinDate" />
 		<result property="del_yn" column="del_yn" />
 	</resultMap>

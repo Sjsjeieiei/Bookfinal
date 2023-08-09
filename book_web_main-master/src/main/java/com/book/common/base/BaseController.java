@@ -42,12 +42,12 @@ public abstract class BaseController  {
 			
 			File file = new File(CURR_IMAGE_REPO_PATH +"\\"+ fileName);
 			if(mFile.getSize()!=0){ //File Null Check
-				if(! file.exists()){ //��λ� ������ �������� ���� ���
-					if(file.getParentFile().mkdirs()){ //��ο� �ش��ϴ� ���丮���� ����
-							file.createNewFile(); //���� ���� ����
+				if(! file.exists()){ //이미 있는지 호가인
+					if(file.getParentFile().mkdirs()){ //있을시 삭제.
+							file.createNewFile(); // 새파일 생성.
 					}
 				}
-				mFile.transferTo(new File(CURR_IMAGE_REPO_PATH +"\\"+"temp"+ "\\"+originalFileName)); //�ӽ÷� ����� multipartFile�� ���� ���Ϸ� ����
+				mFile.transferTo(new File(CURR_IMAGE_REPO_PATH +"\\"+"temp"+ "\\"+originalFileName)); 
 			}
 		}
 		return fileList;
@@ -69,11 +69,13 @@ public abstract class BaseController  {
 		ModelAndView mav = new ModelAndView(viewName);
 		
 		
-		System.out.println("skdlfjfdjlfdjlafjlfjfjfkdljlkajfajfladjffkdljfdlkjfdasfdlj");
+		System.out.println("BaseController 들어옴.");
 		return mav;
 	}
 	
 	
+	
+	//검색 기간
 	protected String calcSearchPeriod(String fixedSearchPeriod){
 		String beginDate=null;
 		String endDate=null;

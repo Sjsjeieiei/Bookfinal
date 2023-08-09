@@ -16,13 +16,13 @@ public class AdminOrderDAOImpl  implements AdminOrderDAO{
 	@Autowired
 	private SqlSession sqlSession;
 	
-	//�ֹ����
+	//새 주문조회.
 	public ArrayList<OrderVO>selectNewOrderList(Map condMap) throws DataAccessException{
 		ArrayList<OrderVO>  orderList=(ArrayList)sqlSession.selectList("mapper.admin.order.selectNewOrderList",condMap);
 		return orderList;
 	}
 
-	//�ֹ����� - ��ۼ���
+	// 배송상태.
 	public void  updateDeliveryState(Map deliveryMap) throws DataAccessException{
 		sqlSession.update("mapper.admin.order.updateDeliveryState",deliveryMap);
 	}

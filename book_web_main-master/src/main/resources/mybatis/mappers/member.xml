@@ -53,14 +53,14 @@
            subAddress,
             NAKWON_COIN
         ) VALUES (
-            #{member_id, jdbcType=VARCHAR},
-            #{member_pw, jdbcType=VARCHAR},
-            #{member_name, jdbcType=VARCHAR},
-            #{hp1, jdbcType=VARCHAR},
-            #{zipcode, jdbcType=VARCHAR},
-            #{address, jdbcType=VARCHAR},
-            #{subAddress, jdbcType=VARCHAR},
-            #{NAKWON_COIN, jdbcType=NUMERIC}
+            #{member_id},
+            #{member_pw},
+            #{member_name},
+            #{hp1},
+            #{zipcode},
+            #{address},
+            #{subAddress},
+            #{NAKWON_COIN}
         ) 
     ]]>
 

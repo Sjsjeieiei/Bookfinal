@@ -115,8 +115,8 @@
         </div>
 
         <div class="text-center mt-4">
-            <button class="btn btn-primary" onclick="location.href='${contextPath}/mypage/listMyOrderHistory.do'">주문목록 보기</button>
-            <button class="btn btn-success" onclick="location.href='${contextPath}/main/main.do'">쇼핑 계속하기</button>
+            <button class="btn btn-main rounded-0 w-100 d-block fw-bold p-2 lh-lg mb-3" onclick="location.href='${contextPath}/mypage/listMyOrderHistory.do'">주문목록 보기</button>
+            <button class="btn btn-main rounded-0 w-100 d-block fw-bold p-2 lh-lg mb-3" onclick="location.href='${contextPath}/main/main.do'">쇼핑 계속하기</button>
         </div>
     </div>
 </div>

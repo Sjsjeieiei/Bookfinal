@@ -166,9 +166,9 @@
 													<!-- 상세주소 -->
 													<div class="d-flex mb-1 align-items-center">
 														<span style="width: 100px;" class="">상세주소</span> <input
-															class="form-control rounded-0 subaddress" type="text"
-															placeholder="상세주소" name="subaddress"
-															value="${item.subaddress}" readonly>
+															class="form-control rounded-0 subAddress" type="text"
+															placeholder="상세주소" name="subAddress"
+															value="${item.subAddress}" readonly>
 													</div>
 													<!-- 상세주소 -->
 													

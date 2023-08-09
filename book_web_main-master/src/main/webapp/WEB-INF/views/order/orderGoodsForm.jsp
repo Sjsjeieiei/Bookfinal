@@ -17,99 +17,154 @@
 <c:set var="total_order_goods_qty" value="0" />
 <!-- 총 배송비 -->
 <c:set var="total_delivery_price" value="3000" />
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8">
+      <form name="form_order">
+        <div class="mb-4">
+          <h2>주문자 정보</h2>
+          <div class="form-group">
+            <label for="member_name">이름</label>
+            <input type="text" value="${memberInfo.member_name}" name="member_name" id="member_name" class="form-control" placeholder="이름을 입력해 주세요." required>
+          </div>
+          <div class="form-group">
+            <label for="hp1">연락처</label>
+            <input type="text" value="${memberInfo.hp1}" name="hp1" id="hp1" class="form-control" placeholder="숫자만 입력" required>
+          </div>
+        </div>
+        
+        <div class="mb-4">
+          <div class="checked_box">
+         <!--    <h2>배송지 정보</h2>
+            <p>
+              <input type="checkbox" onclick="sameInfo(this)">동일
+              <input type="checkbox"> 배송지
+            </p> -->
+          </div>
+          <div class="form-group">
+            <label for="receiver_name">수령인</label>
+            <input type="text" name="receiver_name" id="receiver_name" class="form-control" placeholder="이름 입력 필수." required>
+          </div>
+          <div class="form-group">
+            <label for="receiver_hp1">연락처</label>
+            <input type="text" name="receiver_hp1" id="receiver_hp1" class="form-control" placeholder="숫자만 입력하세요" required>
+          </div>
+          <div class="form-group">
+            <label for="zipcode">배송지</label>
+            <div class="input-group">
+              <input type="text" placeholder="우편번호" id="zipcode" name="zipcode" class="form-control" required>
+              <div class="input-group-append">
+                <a href="javascript:execDaumPostcode()" class="btn btn-outline-secondary">우편번호검색</a>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="member_address">주소</label>
+            <input type="text" id="member_address" name="member_address" class="form-control" placeholder="주소" required>
+            <input type="text" id="subAddress" name="subAddress" class="form-control" placeholder="상세주소" required>
+          </div>
+        </div>
+        <div class="mb-4">
+          <h2>결제방법 선택</h2>
+          <table class="table">
+            <tr>
+              <td>
+                <div class="form-check">
+                  <input type="radio" id="pay_method_card" name="pay_method" value="신용카드" checked class="form-check-input">
+                  <label for="pay_method_card" class="form-check-label">신용카드</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="pay_method_phone" name="pay_method" value="휴대폰결제" class="form-check-input">
+                  <label for="pay_method_phone" class="form-check-label">휴대폰 결제</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="pay_method_kakao" name="pay_method" value="카카오페이(간편결제)" class="form-check-input">
+                  <label for="pay_method_kakao" class="form-check-label">카카오페이(간편결제)</label>
+                </div>
+                <div class="form-check">
+                  <input type="radio" id="pay_method_direct" name="pay_method" value="직접입금" class="form-check-input">
+                  <label for="pay_method_direct" class="form-check-label">직접입금</label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="card_select">
+                <strong>카드 선택:</strong>
+                <select id="card_com_name" name="card_com_name" class="form-control" onchange="selectValue(this, this.value)">
+                  <option value="삼성" selected>삼성</option>
+                  <option value="하나SK">하나SK</option>
+                  <!-- Add other options here -->
+                </select>
+                <strong>할부 기간:</strong>
+                <select id="card_pay_month" name="card_pay_month" class="form-control" onchange="selectValue(this, this.value)">
+                  <option value="일시불" selected>일시불</option>
+                  <option value="2개월">2개월</option>
+                  <!-- Add other options here -->
+                </select>
+              </td>
+            </tr>
+            <tr id="tr_pay_phone" style="visibility:hidden">
+              <td>
+                <strong>휴대폰 번호 입력:</strong>
+                <input  type="text" size="5" value=""  id="pay_order_hp_num" name="pay_order_hp_num" class="form-control">
+              </td>
+            </tr>
+          </table>
+        </div>
+        <button type="button" class="btn btn-main rounded-0 w-100 d-block fw-bold p-2 lh-lg mb-3" onclick="fn_process_pay_order()">결제하기</button>
+        <button type="button" class="btn btn-main rounded-0 w-100 d-block fw-bold p-2 lh-lg mb-3" onclick="location.href='${contextPath}/main/main.do'">쇼핑 계속하기</button>
+      </form>
+    </div>
+    <div class="col-md-4">
+      <div class="order_div">
+        <h2>주문 정보</h2>
+        <div class="order_goods">
+          <h4>주문상품</h4>
+          <c:forEach var="item" items="${myOrderList}">
+            <div>
+              <!-- 주문 상품 -->
+              <div>
+                <a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goods_id}">
+                  <div class="detail_info">
+                    <img src="${contextPath}/thumbnails.do?goods_id=${item.goods_id}&fileName=${item.goods_fileName}" style="width: 64px; height: 64px" class="img-fluid">
+                    <div>
+                      <p>${item.goods_title}</p>
+                      <p>
+                        <span>${item.order_goods_qty}</span>개 <span> · </span> <span>
+                          <fmt:formatNumber value="${item.goods_price*item.order_goods_qty}" pattern="#,###"/>
+                        </span> <span class="goods_price d-none">${item.goods_price*item.order_goods_qty}</span>
+                        원
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          <!-- 상품 가격정보 -->
+          <c:set var="total_order_price" value="${total_order_price + item.goods_price*item.order_goods_qty}" />
+          <c:set var="total_order_goods_qty" value="${total_order_goods_qty + item.order_goods_qty}" />
+          <c:set var="final_total_order_price" value="${final_total_order_price + item.goods_price*item.order_goods_qty}" />
+          <!-- 상품 가격정보 -->
+          </c:forEach>
+        </div>
+        <div class="order_info">
+          <h4>주문정보</h4>
+          <p>총 수량 <span>${total_order_goods_qty} 개</span></p>
+          <p>총 상품금액 <span><fmt:formatNumber value="${total_order_price}" pattern="#,###"/> 원</span></p>
+          <p>총 배송비 <span><fmt:formatNumber value="${total_delivery_price}" pattern="#,###"/> 원</span></p>
+          <c:set var="final_total_order_price" value="${final_total_order_price + total_delivery_price}"/>
+          <p>총 주문 금액 <span><fmt:formatNumber value="${final_total_order_price}" pattern="#,###"/> 원</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
 
-
-<div id="order_box" class="container mt-5">
-	<div>
-		<form name="form_order">
-			<div class="mb-4">
-				<h2>주문자 정보</h2>
-				<div class="mb-3">
-					<label for="member_name">이름</label> <input type="text"
-						class="form-control" value="${memberInfo.member_name}"
-						name="member_name" placeholder="이름을 입력해 주세요." required>
-				</div>
-				<div class="mb-3">
-					<label for="hp1">연락처</label> <input type="text"
-						class="form-control" value="${memberInfo.hp1}" name="hp1"
-						placeholder="- 없이 01000000000" required>
-				</div>
-			</div>
-			<div>
-				<div class="checked_box mb-4">
-					<h2>배송지 정보</h2>
-					<p>
-						<input type="checkbox" onclick="sameInfo(this)"> 주문자와 동일 <input
-							type="checkbox"> 배송지 저장
-					</p>
-				</div>
-
-				<div class="mb-3">
-					<label for="receiver_name">수령인</label> <input type="text"
-						class="form-control" name="receiver_name" id="receiver_name"
-						placeholder="이름을 입력해 주세요." required>
-				</div>
-				<div class="mb-3">
-					<label for="receiver_hp1">연락처</label> <input type="text"
-						class="form-control" name="receiver_hp1" id="receiver_hp1"
-						placeholder="- 없이 01000000000" required>
-				</div>
-				<div class="mb-3">
-					<label for="zipcode">우편번호</label> <input type="text"
-						class="form-control" placeholder="우편번호" id="zipcode"
-						name="zipcode" required> <a
-						href="javascript:execDaumPostcode()">우편번호검색</a>
-				</div>
-				<div class="mb-3">
-					<label for="address">주소</label> <input type="text"
-						class="form-control" id="address" placeholder="주소" name="address"
-						required>
-				</div>
-				<div class="mb-3">
-					<label for="subAddress">상세주소</label> <input type="text"
-						class="form-control" id="subAddress" name="subAddress" required>
-				</div>
-			</div>
-			<div class="mb-4">
-				<h2>결제방법 선택</h2>
-				<table>
-					<tr>
-						<td><input type="radio" id="pay_method" name="pay_method"
-							value="신용카드" checked>신용카드 &nbsp;&nbsp;&nbsp; <input
-							type="radio" id="pay_method" name="pay_method" value="휴대폰결제">휴대폰
-							결제 &nbsp;&nbsp;&nbsp; <input type="radio" id="pay_method"
-							name="pay_method" value="카카오페이(간편결제)">카카오페이(간편결제)
-							&nbsp;&nbsp;&nbsp; <input type="radio" id="pay_method"
-							name="pay_method" value="직접입금">직접입금&nbsp;&nbsp;&nbsp;</td>
-					</tr>
-					<tr>
-						<td class="card_select"><strong>카드 선택:</strong>
-							&nbsp;&nbsp;&nbsp; <select id="card_com_name"
-							name="card_com_name" onchange="selectValue(this, this.value)"
-							class="form-select">
-								<option value="삼성" selected>삼성</option>
-								<option value="하나SK">하나SK</option>
-								<option value="현대">현대</option>
-								<!-- 나머지 옵션들도 동일한 방식으로 작성 -->
-						</select><br> <strong>할부 기간:</strong> &nbsp;&nbsp; <select
-							id="card_pay_month" name="card_pay_month"
-							onchange="selectValue(this, this.value)" class="form-select">
-								<option value="일시불" selected>일시불</option>
-								<option value="2개월">2개월</option>
-								<!-- 나머지 옵션들도 동일한 방식으로 작성 -->
-						</select></td>
-					</tr>
-					<tr id="tr_pay_phone" style="visibility: hidden">
-						<td><strong>휴대폰 번호 입력:</strong> <input type="text" size="5"
-							value="" id="pay_order_hp_num" name="pay_order_hp_num"
-							class="form-control" /></td>
-					</tr>
-				</table>
-
-				<button onclick="fn_process_pay_order()">결제하기</button>
-				<button onclick="location.href='${contextPath}/main/main.do'">쇼핑
-					계속하기</button>
-				<script>
+	function selectValue(selectBox, value){
+		var input = selectBox.nextElementSibling
+		input.setAttribute("value", value);
+	} 
 
 
 	//다음 주소 찾기
@@ -118,7 +173,7 @@
 			oncomplete : function(data) {
 				// 우편번호와 주소 정보를 해당 필드에 넣는다.
 				document.getElementById('zipcode').value = data.zonecode; //5자리 새우편번호 사용
-				document.getElementById('address').value = data.address;
+				document.getElementById('member_address').value = data.member_address;
 			}
 		}).open();
 	}
@@ -131,14 +186,12 @@
 			$("#receiver_name").prop("value","${memberInfo.member_name}");
 			$("#receiver_hp1").prop("value","${memberInfo.hp1}");
 			$("#zipcode").prop("value","${memberInfo.zipcode}");
-			$("#address").prop("value","${memberInfo.address}");
-			$("#subAddress").prop("value","${memberInfo.subAddress}");
+			$("#member_address").prop("value","${memberInfo.member_address}");
 		}else if(sameInfo.checked==false){
 			$("#receiver_name").prop("value","");
 			$("#receiver_hp1").prop("value","");
 			$("#zipcode").prop("value","");
-			$("#address").prop("value","");
-			$("#subAddress").prop("value","");
+			$("#member_address").prop("value","");
 			 
 		}
 		
@@ -163,8 +216,7 @@
 	// 분리되어있는 배송지 정보 
 	let delivery_address;
 	var i_zipcode = document.getElementById("zipcode");
-	var i_address = document.getElementById("address");
-	var i_subAddress = document.getElementById("subAddress");
+	var i_member_address = document.getElementById("member_address");
 	const inputs = document.querySelectorAll("input[required]");
 	
 	var formObj = document.createElement("form");
@@ -184,9 +236,8 @@
 				alert("결제가 취소되었습니다.");
 			}else{
 				// 배송지 통합
-				delivery_address = "우편번호:" + i_zipcode.value + "<br>" + "주소:"
-				+ i_address.value + "<br>" + "상세주소:"
-				+ i_subAddress.value;
+				delivery_member_address = "우편번호:" + i_zipcode.value + "<br>" + "주소:"
+				+ i_member_address.value + "<br>" + "상세주소:";
 				
 				//수령자 이름
 				var i_receiver_name = document.createElement("input");

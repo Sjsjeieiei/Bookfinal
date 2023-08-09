@@ -21,7 +21,6 @@
 		<result property="receiver_name" column="receiver_name" />
 		<result property="receiver_hp1" column="receiver_hp1" />
 		<result property="delivery_address" column="delivery_address" />
-
 		<result property="pay_method" column="pay_method" />
 		<result property="card_com_name" column="card_com_name" />
 		<result property="pay_order_hp_num" column="pay_order_hp_num" />

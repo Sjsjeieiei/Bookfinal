@@ -15,10 +15,7 @@
   
   
   
-      <definition name="/member/naverLoginForm" extends="baseLayout">
-         <put-attribute name="title" value="회원 가입 페이지" />
-         <put-attribute name="body" value="/WEB-INF/views/member/naverlogin.jsp" />
-      </definition>
+   
   
 </tiles-definitions>
 

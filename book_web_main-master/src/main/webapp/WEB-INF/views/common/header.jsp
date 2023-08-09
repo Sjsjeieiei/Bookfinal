@@ -214,7 +214,7 @@
 					<a href="${contextPath}/mypage/listMyOrderHistory.do"
 						class="mySopang text-decoration-none samll d-flex flex-column px-2 text-center ps-3 mt-2">
 						<i class="fa-solid fa-user d-block mb-2 color-main "></i> <span
-						class="my-coupang-title">마이소팡</span>
+						class="my-coupang-title">마이북숍</span>
 					</a> <a href="${contextPath}/cart/myCartList.do"
 						class="cart text-decoration-none samll d-flex flex-column px-2 text-center ps-3 mt-2">
 						<i class="fa-solid fa-cart-arrow-down d-block mb-2 color-main"></i>

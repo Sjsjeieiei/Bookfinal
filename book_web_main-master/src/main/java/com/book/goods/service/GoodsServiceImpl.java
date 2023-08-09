@@ -21,33 +21,33 @@ public class GoodsServiceImpl implements GoodsService {
 	public Map<String, List<GoodsVO>> listGoods() throws Exception {
 		Map<String, List<GoodsVO>> goodsMap = new HashMap<String, List<GoodsVO>>();
 
-		//bestseller 占쏙옙占쏙옙
+		//테이블의 bestseller 상품
 		List<GoodsVO> goodsList = goodsDAO.selectGoodsList("bestseller");
 		goodsMap.put("bestseller", goodsList);
 
-		//占쏙옙占쏙옙占쏙옙 占쏙옙품 占쏙옙占쏙옙
+		//문학
 		goodsList = goodsDAO.selectMenusList("문학");
 		goodsMap.put("cate_mun", goodsList);
 
-		//占쏙옙占쏙옙 占쏙옙품 占쏙옙占쏙옙
+		//it
 		goodsList = goodsDAO.selectMenusList("it");
 		goodsMap.put("cate_it", goodsList);
 
-		//占실곤옙占쏙옙占실� 占쏙옙품 占쏙옙占쏙옙
+		//만화
 		goodsList = goodsDAO.selectMenusList("만화");
 		goodsMap.put("cate_man", goodsList);
 
-		//占쏙옙활占쏙옙품 占쏙옙품 占쏙옙占쏙옙
+		//웹툰
 		goodsList = goodsDAO.selectMenusList("웹툰");
 		goodsMap.put("cate_web", goodsList);
 		
-		//占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 Map return
+		//카테고리 목록 Map return
 		return goodsMap;
 	}
 
 	
 	
-	//header 카占쌓곤옙占쏙옙
+	//header 메뉴
 	@Override
 	public List<GoodsVO> menuGoods(String menuGoods) throws Exception {
 		List goodsList = goodsDAO.selectGoodsByMenuGoods(menuGoods);
@@ -56,7 +56,7 @@ public class GoodsServiceImpl implements GoodsService {
 	
 	
 
-	//占쏙옙천키占쏙옙占쏙옙
+	//키워드검색
 	@Override
 	public List<String> keywordSearch(String keyword) throws Exception {
 		List<String> list = goodsDAO.selectKeywordSearch(keyword);
@@ -64,7 +64,7 @@ public class GoodsServiceImpl implements GoodsService {
 	}
 
 	
-	//占싯삼옙
+	//상품검색
 	@Override
 	public List<GoodsVO> searchGoods(String searchWord) throws Exception {
 		List goodsList = goodsDAO.selectGoodsBySearchWord(searchWord);
@@ -72,18 +72,21 @@ public class GoodsServiceImpl implements GoodsService {
 	}
 	
 
-	//占쏙옙품占쏙옙
+	//상세 구매 페이지
 	public Map goodsDetail(String _goods_id) throws Exception {
 		Map goodsMap = new HashMap();
-		//占쏙옙품占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙
+		//결과 담을 goodsMap 생성
+		
+		
+		//goodsmap 리스트에 goodsvo라는 이름을 추가합니다.
 		GoodsVO goodsVO = goodsDAO.selectGoodsDetail(_goods_id);
 		goodsMap.put("goodsVO", goodsVO);
 		
-		//占쏙옙품 占쏙옙占싱뱄옙占쏙옙 占쏙옙占쏙옙
+	    // 상품에 대한 이미지 파일 정보를 가져와 goodsMap에 "imageList"라는 이름으로 추가합니다.
 		List<ImageFileVO> imageList = goodsDAO.selectGoodsDetailImage(_goods_id);
 		goodsMap.put("imageList", imageList);
 		
-		//占쏙옙 占쏙옙占쏙옙占쏙옙 占쏙옙占쏙옙 Map return
+		//최종 데이터 저장된 goodsMap을 반환합니다.
 		return goodsMap;
 	}
 

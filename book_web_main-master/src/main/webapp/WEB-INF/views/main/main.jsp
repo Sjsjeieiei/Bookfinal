@@ -71,7 +71,7 @@
 
 		// 탭 버튼들을 순환하여 일정 간격으로 활성화/비활성화합니다.
 		var currentTabIndex = 0;
-		var interval = 1000; // 각 슬라이드가 보여지는 시간 (1초)
+		var interval = 2000; // 각 슬라이드가 보여지는 시간 (2초)
 
 		function activateNextTab() {
 			tabButtons.eq(currentTabIndex).removeClass('show active');
@@ -135,7 +135,7 @@
 		<div
 			class="list-group position-absolute top-50 end-0 translate-middle-y z-2 me-5 rounded-0"
 			role="tablist">
-			<a class="list-group-item list-group-item-action p-0 active"
+<%-- 			<a class="list-group-item list-group-item-action p-0 active"
 				id="hero1" data-bs-toggle="list" href="#hero01" role="tab"
 				aria-controls="hero01"> <img
 				src="${contextPath}/resources/img/cate/1.png">
@@ -155,7 +155,7 @@
 				data-bs-toggle="list" href="#hero05" role="tab"
 				aria-controls="hero05"> <img
 				src="${contextPath}/resources/img/cate/5.png">
-			</a>
+			</a> --%>
 		</div>
 		<!-- tab본문영역, caller 선택시 id값에 맞는 tab이 표출된다. -->
 
@@ -198,7 +198,7 @@
 	<div class="row">
 		<div class="p-0 align-items-center gap-3 mt-5">
 			<p class="fs-6 mb-1">HOT! TREND</p>
-			<p class="fs-3 fw-bold">카테고리별 추천상품</p>
+			<p class="fs-3 fw-bold">베스트셀러 상품</p>
 		</div>
 	</div>
 

@@ -21,7 +21,7 @@
 			<div
 				class="bg-main mypageBox d-flex fw-light align-items-center text-center box-sixing-content border-top border-end border-primary-subtle box-sixing-border"
 				style="width: 150px">
-				<p class="w-100 mb-0 fs-3">SO관리</p>
+				<p class="w-100 mb-0 fs-3">관리자</p>
 			</div>
 			<div
 				class="bg-main mypageBox fw-light d-flex flex-column align-items-center ps-4 pt-4 border-end border-primary-subtle"
@@ -67,7 +67,7 @@
 			<div
 				class="position-absolute top-100 start-0 bg-light px-3 py-4 d-flex flex-column border secondary-subtle"
 				style="width: 150px;">
-				<p class="fw-bold text-black mb-2">SO관리</p>
+				<p class="fw-bold text-black mb-2">관리자</p>
 				<a href="${contextPath}/admin/goods/adminGoodsMain.do"
 					class="text-decoration-none mb-2 small sideMenu adminGoodsMain">상품관리</a>
 				<a href="${contextPath}/admin/order/adminOrderMain.do"

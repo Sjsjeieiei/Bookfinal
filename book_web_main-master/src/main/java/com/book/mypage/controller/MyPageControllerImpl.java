@@ -34,7 +34,7 @@ public class MyPageControllerImpl extends BaseController  implements MyPageContr
 	@Autowired
 	private MemberVO memberVO;
 	
-	//�ֹ����
+	//내 주문 목록
 	@Override
 	@RequestMapping(value="/listMyOrderHistory.do" ,method = RequestMethod.GET)
 	public ModelAndView listMyOrderHistory(@RequestParam Map<String, String> dateMap,
@@ -43,7 +43,7 @@ public class MyPageControllerImpl extends BaseController  implements MyPageContr
 		ModelAndView mav = new ModelAndView(viewName);
 		HttpSession session=request.getSession();
 		
-		//memberInfo�� member_id get
+		//멤버데이터 저자오딘 memebrifo get 해옴.
 		memberVO=(MemberVO)session.getAttribute("memberInfo");
 		String  member_id=memberVO.getMember_id();
 		

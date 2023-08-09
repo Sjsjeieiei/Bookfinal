@@ -27,7 +27,7 @@ public class AdminOrderControllerImpl extends BaseController  implements AdminOr
 	@Autowired
 	private AdminOrderService adminOrderService;
 	
-	//�ֹ����
+	//관리자 
 	@Override
 	@RequestMapping(value="/adminOrderMain.do" ,method={RequestMethod.GET, RequestMethod.POST})
 	public ModelAndView adminOrderMain(@RequestParam Map<String, String> dateMap,

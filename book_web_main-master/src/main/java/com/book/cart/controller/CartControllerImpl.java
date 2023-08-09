@@ -41,8 +41,7 @@ public class CartControllerImpl extends BaseController implements CartController
 		String member_id=memberVO.getMember_id();
 		cartVO.setMember_id(member_id);
 		Map<String ,List> cartMap=cartService.myCartList(cartVO);
-		session.setAttribute("cartMap", cartMap);//��ٱ��� ��� ȭ�鿡�� ��ǰ �ֹ� �� ����ϱ� ���ؼ� ��ٱ��� ����� ���ǿ� �����Ѵ�.
-		//mav.addObject("cartMap", cartMap);
+		session.setAttribute("cartMap", cartMap);//가져온 정보를 carMap 에 저장합니다.000000000000000000
 		return mav;
 	}
 	@RequestMapping(value="/addGoodsInCart.do" ,method = RequestMethod.POST,produces = "application/text; charset=utf8")
@@ -65,27 +64,28 @@ public class CartControllerImpl extends BaseController implements CartController
 			return "add_success";
 		}
 	}
-	
+	// 카트 수정
 	@RequestMapping(value="/modifyCartQty.do" ,method = RequestMethod.POST)
-	public @ResponseBody String  modifyCartQty(@RequestParam("goods_id") int goods_id,
+	public @ResponseBody String  modifyCartQty(@RequestParam("goods_id") int goods_id, // 상품과 장바구니 id 리퀘스트
 			                                   @RequestParam("cart_goods_qty") int cart_goods_qty,
 			                                    HttpServletRequest request, HttpServletResponse response)  throws Exception{
+		//session memberInfo 로 멤버 데이터 리퀘스트
 		HttpSession session=request.getSession();
 		memberVO=(MemberVO)session.getAttribute("memberInfo");
 		String member_id=memberVO.getMember_id();
-		cartVO.setGoods_id(goods_id);
+		cartVO.setGoods_id(goods_id);  
 		cartVO.setMember_id(member_id);
 		cartVO.setCart_goods_qty(cart_goods_qty);
-		boolean result=cartService.modifyCartQty(cartVO);
+		boolean result=cartService.modifyCartQty(cartVO); 
 		
-		if(result==true){
+		if(result==true){   //결과가 true 수정성공 false 실패
 		   return "modify_success";
 		}else{
 			  return "modify_failed";	
 		}
 		
 	}
-	
+	//카트 삭제.
 	@RequestMapping(value="/removeCartGoods.do" ,method = RequestMethod.POST)
 	public ModelAndView removeCartGoods(@RequestParam("cart_id") int cart_id,
 			                          HttpServletRequest request, HttpServletResponse response)  throws Exception{

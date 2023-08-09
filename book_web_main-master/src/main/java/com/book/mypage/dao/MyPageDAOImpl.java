@@ -17,60 +17,61 @@ public class MyPageDAOImpl implements MyPageDAO{
 	@Autowired
 	private SqlSession sqlSession;
 
-	//�ֹ����
+	//내 주문조회 목록
 	public List<OrderVO> selectMyOrderHistoryList(Map dateMap) throws DataAccessException{
 		List<OrderVO> myOrderHistList=(List)sqlSession.selectList("mapper.mypage.selectMyOrderHistoryList",dateMap);
 		return myOrderHistList;
 	}
 	
-	//�ֹ����
+	//주문취소
 	public void updateMyOrderCancel(String order_id) throws DataAccessException{
 		sqlSession.update("mapper.mypage.updateMyOrderCancel",order_id);
 	}
 	
-	//��ǰ
+	// 주문취소 값 돌려줌.
 	public void updateMyOrderReturn(String order_id) throws DataAccessException{
 		sqlSession.update("mapper.mypage.updateMyOrderReturn",order_id);
 	}
 	
-	//��ȯ
+	//주문 상태변경.
 	public void updateMyOrderExchange(String order_id) throws DataAccessException{
 		sqlSession.update("mapper.mypage.updateMyOrderExchange",order_id);
 	}
 	
-	//������
+	//내 데이터 가져옴.
 	public MemberVO selectMyDetailInfo(String member_id) throws DataAccessException{
 		MemberVO memberVO=(MemberVO)sqlSession.selectOne("mapper.mypage.selectMyDetailInfo",member_id);
 		return memberVO;
 		
 	}
 	
-	//�� ���� ����
+	//데이터 업데이트
 	public void updateMyInfo(Map memberMap) throws DataAccessException{
 		sqlSession.update("mapper.mypage.updateMyInfo",memberMap);
 	}
 	
-	//ȸ��Ż��
+	//삭제
 	public void deleteMember(String member_id) throws DataAccessException{
 		sqlSession.update("mapper.mypage.deleteMember",member_id);
 	}
-
+//주문 목록
 	@Override
 	public List<OrderVO> selectMyOrderGoodsList(String member_id) throws DataAccessException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
+	// 주문 선택
 	@Override
 	public List selectMyOrderInfo(String order_id) throws DataAccessException {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
-	@Override
+	@Override//삭제
 	public void delmember(String member_id) throws DataAccessException {
 		// TODO Auto-generated method stub
-		
+		sqlSession.update("mapper.mypage.deleteMember",member_id);
 	}
 	
 	

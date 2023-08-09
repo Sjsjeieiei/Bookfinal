@@ -21,9 +21,9 @@
 	</select>
 	
 	<!-- 배송중 갯수 카운트 -->
-	<select id="sopang_money" parameterType="String" resultType="java.lang.Long">
+	<select id="bookshop_money" parameterType="String" resultType="java.lang.Long">
         <![CDATA[
-        select sopang_money from t_shopping_member where member_id = #{member_id}
+        select bookshop_money from t_shopping_member where member_id = #{member_id}
 	    ]]>
 	</select>
 	

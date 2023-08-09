@@ -23,7 +23,7 @@
 	<select id="listMember" resultMap="memberResult"   parameterType="java.util.HashMap"  >
 	    <![CDATA[
 		 select a.*, rownum as rnum from
-        (select member_name,member_id,member_pw, hp1, zipcode, subAddress, sopang_money, del_yn, to_char(joindate,'YYYY-MM-DD') as joindate 
+        (select member_name,member_id,member_pw, hp1, zipcode, subAddress, bookshop_money, del_yn, to_char(joindate,'YYYY-MM-DD') as joindate 
 		from t_shopping_member 
 		where  to_char(joindate,'yyyy-mm-dd')  between #{beginDate} and #{endDate}
 		order by joindate asc) a
