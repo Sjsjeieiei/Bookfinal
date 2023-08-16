@@ -38,7 +38,22 @@ public class CartControllerImpl extends BaseController implements CartController
 		ModelAndView mav = new ModelAndView(viewName);
 		HttpSession session=request.getSession();
 		MemberVO memberVO=(MemberVO)session.getAttribute("memberInfo");
+
+
+
+// script 에서도 조건문 가능하나 저의경우 controller 에서 조건문 걸겠습니다.
+		boolean isLogOn = memberVO != null && memberVO.getMember_id() != null;
+		//membervo 가 null or memberid 가 null 가 같을시
+
+		if (!isLogOn) {
+			// 로그인 상태가 아닐 때 로그인 페이지로 이동
+			mav.setViewName("redirect:/member/login.do");
+			return mav;
+		}
 		String member_id=memberVO.getMember_id();
+
+
+
 		cartVO.setMember_id(member_id);
 		Map<String ,List> cartMap=cartService.myCartList(cartVO);
 		session.setAttribute("cartMap", cartMap);//가져온 정보를 carMap 에 저장합니다.000000000000000000

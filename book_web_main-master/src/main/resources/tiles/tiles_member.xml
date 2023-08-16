@@ -12,11 +12,12 @@
          <put-attribute name="title" value="회원 가입 페이지" />
          <put-attribute name="body" value="/WEB-INF/views/member/memberForm.jsp" />
       </definition>
-  
-  
-  
-   
-  
+
+
+    <definition name="/member/naverLogin" extends="baseLayout">
+        <put-attribute name="title" value="네이버 로그인 페이지" />
+        <put-attribute name="body" value="/WEB-INF/views/member/naverLogin.jsp" />
+    </definition>
 </tiles-definitions>
 
 

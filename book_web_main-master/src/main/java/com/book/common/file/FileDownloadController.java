@@ -17,7 +17,7 @@ import net.coobird.thumbnailator.Thumbnails;
 
 @Controller
 public class FileDownloadController {
-	private static final String CURR_IMAGE_REPO_PATH = "C:\\shopping\\file_repo";
+	private static final String CURR_IMAGE_REPO_PATH = "C:\\Shopping\\file_repo";
 	
 	@RequestMapping("/download")
 	protected void download(@RequestParam("fileName") String fileName,  

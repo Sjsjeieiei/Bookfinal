@@ -29,6 +29,7 @@
     }
 </style>
 <script type="text/javascript">
+
 	var loopSearch = true;
 	function keywordSearch() {
 		var searchWordValue = document.getElementById('searchWord').value;
@@ -99,6 +100,9 @@
 			element.classList.add('d-none');
 		}
 	}
+
+
+
 </script>
 
 <body class="position-relative">
@@ -138,7 +142,8 @@
 					<c:otherwise>
 						<div class="d-flex gap-2">
 							<a href="${contextPath}/member/login.do"
-								class="text-decoration-none samll btn btn-outline-secondary btn-sm p-0 px-2 rounded-0 bg-white">로그인</a> 
+								class="text-decoration-none samll btn btn-outline-secondary btn-sm p-0 px-2 rounded-0 bg-white">로그인</a>
+
 							<a href="${contextPath}/member/memberForm.do" class="text-decoration-none samll btn btn-outline-secondary btn-sm p-0 px-2 rounded-0 bg-white">회원가입</a>
 						</div>
 					</c:otherwise>
@@ -218,7 +223,7 @@
 					</a> <a href="${contextPath}/cart/myCartList.do"
 						class="cart text-decoration-none samll d-flex flex-column px-2 text-center ps-3 mt-2">
 						<i class="fa-solid fa-cart-arrow-down d-block mb-2 color-main"></i>
-						<span class="my-coupang-title">장바구니</span>
+						<span class="my-coupang-title .test">장바구니</span>
 					</a>
 				</div>
 			</div>

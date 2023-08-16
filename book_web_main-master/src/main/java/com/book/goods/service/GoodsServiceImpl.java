@@ -40,7 +40,7 @@ public class GoodsServiceImpl implements GoodsService {
 		//웹툰
 		goodsList = goodsDAO.selectMenusList("웹툰");
 		goodsMap.put("cate_web", goodsList);
-		
+
 		//카테고리 목록 Map return
 		return goodsMap;
 	}

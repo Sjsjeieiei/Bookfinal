@@ -42,11 +42,18 @@ public class MyPageControllerImpl extends BaseController  implements MyPageContr
 		String viewName=(String)request.getAttribute("viewName");
 		ModelAndView mav = new ModelAndView(viewName);
 		HttpSession session=request.getSession();
-		
+
 		//멤버데이터 저자오딘 memebrifo get 해옴.
 		memberVO=(MemberVO)session.getAttribute("memberInfo");
+		boolean isLogOn = memberVO != null && memberVO.getMember_id() != null;
+
+		if (!isLogOn) {
+			// 로그인 상태가 아닐 때 로그인 페이지로 이동
+			mav.setViewName("redirect:/member/login.do");
+			return mav;
+		}
 		String  member_id=memberVO.getMember_id();
-		
+
 		//��ȸ�Ⱓ fixedSearchPeriod get
 		String fixedSearchPeriod = dateMap.get("fixedSearchPeriod");
 		//��ȸ �Ⱓ �ʱ�ȭ
@@ -100,6 +107,9 @@ public class MyPageControllerImpl extends BaseController  implements MyPageContr
 		mav.addObject("message", "returning_goods");
 		mav.setViewName("redirect:/mypage/listMyOrderHistory.do");
 		return mav;
+
+
+		//hello
 	}
 	
 	
