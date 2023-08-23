@@ -30,7 +30,7 @@
 
   <div align="center">
 	<h3>:movie_camera:관리자 상품</h3>
-	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/c0e7ac75-b8b4-448e-ac6e-878123e8b671" />
+	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/6489c1fc-dfa9-4b52-b66e-a8a4f3948c70" />
 </div>
 
   <div align="center">
