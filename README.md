@@ -35,7 +35,7 @@
 </div>
   <div align="center">
 	<h3>:movie_camera:네이버 로그인</h3>
-	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/ab60e35a-a02f-4312-b275-49dd37107ed6 />
+	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/df992cda-4dbf-491d-b8e8-4ee60b2b49b4" />
 </div>		
 <div align="center">
 전체영상 <br>
