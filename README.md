@@ -1,6 +1,9 @@
 # Bookshop
  </br>spring 활용 웹 쇼핑몰
-
+<div align="center">
+ <h3>:pray: 소개</h3>
+	<p>Spring Framework를 활용한 도서 쇼핑몰 프로젝트</p>
+</div>
 ## 💻 My Stack
 <div align="center">
 	<h3>:book: 기술</h3>
