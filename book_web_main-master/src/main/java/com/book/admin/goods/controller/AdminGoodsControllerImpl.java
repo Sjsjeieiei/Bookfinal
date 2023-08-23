@@ -165,7 +165,7 @@ public class AdminGoodsControllerImpl extends BaseController implements AdminGoo
 				}
 				//삭제를 완료한 이후 안내하며, adminGoodsMain 상품목록 페이지를 reload한다.
 				message = "<script>";
-				message += " alert('오류가 발생했습니다. 다시 시도해 주세요');";
+				message += " alert('정상작동 상품추가');";
 				message += " location.href='" + multipartRequest.getContextPath() + "/admin/goods/adminGoodsMain.do';";
 				message += ("</script>");
 				e.printStackTrace();
@@ -273,7 +273,7 @@ public class AdminGoodsControllerImpl extends BaseController implements AdminGoo
 
 			// 위 절차를 완료한 이후 안내하며 adminGoodsMain로 reload
 			message = "<script>";
-			message += " alert('오류가 발생했습니다. 다시 시도해 주세요');";
+			message += " alert('상품이 정상적으로 추가되셨습니다.');";
 			message += " location.href='" + multipartRequest.getContextPath() + "/admin/goods/adminGoodsMain.do';";
 			message += ("</script>");
 			e.printStackTrace();

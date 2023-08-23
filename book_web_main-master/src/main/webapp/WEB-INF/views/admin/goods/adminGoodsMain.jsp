@@ -369,9 +369,10 @@
 														type="submit"
 														formaction="${contextPath}/admin/goods/modifyGoods.do?goods_id=${item.goods_id }">수정</button>
 													<!-- 수정 --> <!-- 삭제 -->
-													<button href="https://www.naver.com"
-														class="w-100 btn border-main small rounded-0 samll mb-0"
-														onClick="deleteGoods(${item.goods_id})" type="button">삭제</button>
+													<button
+															class="w-100 btn border-main small rounded-0 samll mb-2"
+															type="submit"
+															formaction="${contextPath}/admin/goods/deleteGoods.do?goods_id=${item.goods_id }">삭제</button>
 													<!-- 삭제 -->
 
 												</td>

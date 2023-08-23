@@ -108,7 +108,7 @@
 						배송/교환/반품 안내</a></li>
 			</ul>
 			<!-- tab Caller -->
-<h4>${goods.goods_intro }</h3>
+
 
 			<!-- tab 본문 -->
 			<div class="tab-content mt-5" id="nav-tabContent">

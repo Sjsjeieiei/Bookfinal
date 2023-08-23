@@ -21,9 +21,9 @@
     --basic: #383838;
     --gray: #646464;
     --light: #f9f9f9;
-    --mainColor: #52adad;
-    --mainColor_active: #c9f3f3;
-    --mainColorLight:#52adad;
+    --mainColor: rgb(46,182,142);
+    --mainColor_active: rgb(123, 239, 207);;
+    --mainColorLight: rgb(46,182,142);;
     --back_eee: #f5f5f5;
     --txt07: 0.7rem;
     --txt08: 0.8rem;
