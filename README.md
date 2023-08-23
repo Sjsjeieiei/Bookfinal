@@ -27,6 +27,16 @@
 	<h3>:movie_camera:장바구니,바로구매</h3>
 	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/c0e7ac75-b8b4-448e-ac6e-878123e8b671" />
 </div>
+
+  <div align="center">
+	<h3>:movie_camera:관리자 상품</h3>
+	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/c0e7ac75-b8b4-448e-ac6e-878123e8b671" />
+</div>
+
+  <div align="center">
+	<h3>:movie_camera:관리자 주문,회원</h3>
+	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/c0e7ac75-b8b4-448e-ac6e-878123e8b671" />
+</div>
 <div align="center">
 전체영상 <br>
 http://naver.me/xuiYBVUi
