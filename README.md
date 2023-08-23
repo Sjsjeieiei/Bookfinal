@@ -14,13 +14,18 @@
 </div>
 		
 <div align="center">
+	<h3>:movie_camera:장바구니</h3>
+	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/c0e7ac75-b8b4-448e-ac6e-878123e8b671" />
+</div>
+  
+<div align="center">
 	<h3>:movie_camera:장바구니,마이페이지</h3>
 	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/5eb080ab-1f73-4a5f-91ae-6975d29d429e" />
 </div>
 		
 <div align="center">
 	<h3>:movie_camera:장바구니,바로구매</h3>
-	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/5eb080ab-1f73-4a5f-91ae-6975d29d429e" />
+	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/c0e7ac75-b8b4-448e-ac6e-878123e8b671" />
 </div>
 
 전체영상 <br>
