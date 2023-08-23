@@ -1,7 +1,7 @@
 # Bookshop
  </br>spring 활용 웹 쇼핑몰
 
-## 💻 My Stack
+
 <div align="center">
 	<h3>:book: 기술</h3>
 	<img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white" />
