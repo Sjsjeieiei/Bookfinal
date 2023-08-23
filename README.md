@@ -16,7 +16,10 @@
 	
 </div>
 
-
+<div align="center">
+	<h3>:movie_camera: 메인페이지</h3>
+	<video src="https://github.com/ImSungCae/webtoonfriends/assets/134353202/b3e980b3-cde2-4c0b-a69f-b892d6358b23" />
+</div>
 
 
 전체영상 <br>
