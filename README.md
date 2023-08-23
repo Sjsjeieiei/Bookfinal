@@ -38,8 +38,8 @@
 	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/b2f9d694-4aff-45cb-84e1-057eef08509a" />
 </div>
   <div align="center">
-	<h3>:movie_camera:관리자 주문,회원</h3>
-	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/b2f9d694-4aff-45cb-84e1-057eef08509a" />
+	<h3>:movie_camera:네이버 로그인</h3>
+	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/ab60e35a-a02f-4312-b275-49dd37107ed6 />
 </div>		
 <div align="center">
 전체영상 <br>
