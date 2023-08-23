@@ -1,5 +1,4 @@
-# Bookshop
- </br>spring 활용 웹 쇼핑몰
+# Bookshop spring 활용 웹 쇼핑몰
 
 
 
