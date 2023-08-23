@@ -15,7 +15,7 @@
 		
 <div align="center">
 	<h3>:movie_camera:장바구니</h3>
-	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/c0e7ac75-b8b4-448e-ac6e-878123e8b671" />
+	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/256d30d1-44a9-4dc1-bad4-84781061e803" />
 </div>
   
 <div align="center">
@@ -27,6 +27,7 @@
 	<h3>:movie_camera:장바구니,바로구매</h3>
 	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/c0e7ac75-b8b4-448e-ac6e-878123e8b671" />
 </div>
-
+<div align="center">
 전체영상 <br>
 http://naver.me/xuiYBVUi
+</div>
