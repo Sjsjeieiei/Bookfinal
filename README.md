@@ -10,7 +10,7 @@
 
 <div align="center">
 	<h3>:movie_camera:로그인,회원가입</h3>
-	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/30ea1106-691c-4f97-9a67-82bedea51ec7" />
+	<video src="https://github.com/Sjsjeieiei/Bookfinal/assets/99542956/8c5e40c2-561d-4df3-bad1-2d05edd4d140" />
 </div>
 		
 <div align="center">
