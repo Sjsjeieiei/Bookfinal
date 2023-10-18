@@ -45,7 +45,7 @@ http://naver.me/xuiYBVUi
 PPT <br>
 https://www.canva.com/design/DAFr_l8Xt2Q/gch5xd2RZBHBT8iLDud8aQ/edit?utm_content=DAFr_l8Xt2Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 </div>
-</div>
+<br>	
 기획자료<br>
 http://naver.me/Gdi64VXF
 </div>
